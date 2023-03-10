@@ -1,6 +1,12 @@
 import csv
 from datetime import datetime
 
+menu = open("menu.txt", "w", encoding="utf-8")
+menu.write("please choose a pizza:\n1: Classic\n2: Margarita\n3: Plain\n4: Pepperoni\n")
+menu.write("=================================\n")
+menu.write("please choose a pizza sauce:\n1: Mushroom\n2: Onion\n3: Meat\n4: Corn\n5: Sausage")
+menu.close()
+
 
 class Pizza:
     def __init__(self, description, cost):
@@ -21,7 +27,17 @@ class Classic(Pizza):
 
 class Margarita(Pizza):
     def __init__(self):
-        super().__init__("Margarita", 60)
+        super().__init__("Margarita", 55)
+
+
+class Plain(Pizza):
+    def __init__(self):
+        super().__init__("Plain", 50)
+
+
+class Pepperoni(Pizza):
+    def __init__(self):
+        super().__init__("Pepperoni", 55)
 
 
 class Decorator(Pizza):
@@ -39,14 +55,35 @@ class Mushroom(Decorator):
     def __init__(self, component):
         super().__init__(component)
         self.description = "Mushroom"
-        self.cost = 17
+        self.cost = 7
 
 
 class Onion(Decorator):
     def __init__(self, component):
         super().__init__(component)
         self.description = "Onion"
-        self.cost = 12
+        self.cost = 5
+
+
+class Meat(Decorator):
+    def __init__(self, component):
+        super().__init__(component)
+        self.description = "Meat"
+        self.cost = 10
+
+
+class Corn(Decorator):
+    def __init__(self, component):
+        super().__init__(component)
+        self.description = "Corn"
+        self.cost = 4
+
+
+class Sausage(Decorator):
+    def __init__(self, component):
+        super().__init__(component)
+        self.description = "Sausage"
+        self.cost = 8
 
 
 if __name__ == "__main__":
@@ -62,6 +99,12 @@ if __name__ == "__main__":
         elif p == "2":
             pizza = Margarita()
             break
+        elif p == "3":
+            pizza = Plain()
+            break
+        elif p == "4":
+            pizza = Pepperoni()
+            break
         else:
             print("Incorrect character, please try again")
             with open("Menu.txt", "r") as menu:
@@ -74,6 +117,15 @@ if __name__ == "__main__":
             break
         elif s == "2":
             sauce = Onion(pizza)
+            break
+        elif s == "3":
+            sauce = Meat(pizza)
+            break
+        elif s == "4":
+            sauce = Corn(pizza)
+            break
+        elif s == "5":
+            sauce = Sausage(pizza)
             break
         else:
             print("Incorrect character, please try again")

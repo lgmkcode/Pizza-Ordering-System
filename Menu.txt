@@ -1,7 +1,12 @@
 please choose a pizza:
 1: Classic
 2: Margarita
+3: Plain
+4: Pepperoni
 =================================
 please choose a pizza sauce:
 1: Mushroom
 2: Onion
+3: Meat
+4: Corn
+5: Sausage
