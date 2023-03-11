@@ -7,6 +7,9 @@ menu.write("=================================\n")
 menu.write("please choose a pizza sauce:\n1: Mushroom\n2: Onion\n3: Meat\n4: Corn\n5: Sausage")
 menu.close()
 
+database = open("Orders_Database.csv", "a", encoding="utf-8")
+database.close()
+
 
 class Pizza:
     def __init__(self, description, cost):
